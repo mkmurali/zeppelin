@@ -22,7 +22,9 @@ import org.apache.zeppelin.scheduler.Scheduler;
 import org.apache.zeppelin.scheduler.SchedulerFactory;
 
 import java.sql.*;
-import java.util.*;
+
+import java.util.List;
+import java.util.Properties;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +45,7 @@ import org.slf4j.LoggerFactory;
  */
 public class SqlServerInterpreter extends Interpreter
 {
-  private static final String VERSION = "0.5.6-2.1";
+  private static final String VERSION = "2.1.0.2";
 
   private static final char NEWLINE = '\n';
   private static final char TAB = '\t';
@@ -59,7 +61,6 @@ public class SqlServerInterpreter extends Interpreter
     "com.microsoft.sqlserver.jdbc.SQLServerDriver";
   private static final String DEFAULT_MAX_RESULT = "1000";
   private static final String DEFAULT_CONNECTION_STYLE = NOTEBOOK_CONNECTION_STYLE;
-  private static final List<String> NO_COMPLETION = new ArrayList<>();
 
   private static final String SQLSERVER_SERVER_URL = "sqlserver.url";
   private static final String SQLSERVER_SERVER_USER = "sqlserver.user";
@@ -172,7 +173,7 @@ public class SqlServerInterpreter extends Interpreter
     return input.replace(TAB, ' ').replace(NEWLINE, ' ');
   }
 
-  private InterpreterResult executeMetaCommand(String cmd)
+  private InterpreterResult executeMetaCommand(String cmd, InterpreterContext ctx)
   {
     _logger.debug("Meta Command: '" + cmd + "'");
 
@@ -182,6 +183,8 @@ public class SqlServerInterpreter extends Interpreter
     if (cmd.toLowerCase().trim().equals(":info"))
     {
       resultMessage
+        .append(String.format("Interpreter version: %1s", VERSION))
+        .append(NEWLINE)
         .append(String.format("Using notebook connection: %1s", _useNotebookConnection))
         .append(NEWLINE);
     }
@@ -215,12 +218,12 @@ public class SqlServerInterpreter extends Interpreter
   }
 
   @Override
-  public InterpreterResult interpret(String cmd, InterpreterContext contextInterpreter) {
+  public InterpreterResult interpret(String cmd, InterpreterContext ctx) {
     InterpreterResult.Code result;
     StringBuilder resultMessage = new StringBuilder();
 
     if (cmd.startsWith(":")) {
-      return executeMetaCommand(cmd);
+      return executeMetaCommand(cmd, ctx);
     }
 
     _logger.debug("T-SQL command: '" + cmd + "'");
@@ -286,7 +289,7 @@ public class SqlServerInterpreter extends Interpreter
 
   @Override
   public void cancel(InterpreterContext context) {
-
+    _logger.info("Cancel not (yet) implemented");
   }
 
   @Override
@@ -308,6 +311,6 @@ public class SqlServerInterpreter extends Interpreter
 
   @Override
   public List<String> completion(String buf, int cursor) {
-      return NO_COMPLETION;
+    return null;
   }
 }

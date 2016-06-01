@@ -45,7 +45,7 @@ curl -L "https://download.microsoft.com/download/0/2/A/02AAE597-3865-456C-AE7F-6
 Download code from GitHub. From a terminal shell:
 
 ```
-git clone https://github.com/yorek/incubator-zeppelin.git zeppelin-sqlserver
+git clone --branch=branch-0.5.6 https://github.com/yorek/incubator-zeppelin.git zeppelin-sqlserver
 ```
 
 This will clone the GitHub repository into a folder named ```zeppelin-sqlserver``` in your home directory
@@ -131,7 +131,7 @@ The selected interpreter, which will be available to use in your notebook, will 
 Now click on the white box on the top, and you'll be able to write your first query. Something like:
 
 ```
-%tsql
+%tsql.sql
 select @@version
 ```
 

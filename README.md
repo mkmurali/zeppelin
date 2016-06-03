@@ -97,7 +97,7 @@ you can now head to ```http://localhost:8080``` to see Zeppelin running.
 
 Click on Interpreter menu item so that Zeppelin will show you the Interpreters page.
 
-#### Change and existing configuration
+#### Change an existing configuration
 
 Scroll to the bottom of the page to find the ```tsql``` interpreter. Click on the ```edit``` button on the right and fill the properties with the values correct for the SQL Server or SQL Azure instance you'd like to connect to. The property ```sqlserver.driver.name``` is already set to the correct value. Change it *only* if you really know what you're doing.
 

@@ -2,13 +2,13 @@
 
 This fork of Apache Zeppelin is focused on specific support for SQL Server and SQL Azure. Please refer to Apache Zeppelin main page for general information on the project:
 
-[Apache Zeppelin](https://github.com/apache/incubator-zeppelin)
+[Apache Zeppelin](https://github.com/apache/zeppelin)
 
-This branch is aligned with the [branch-0.5.6](https://github.com/apache/incubator-zeppelin/tree/branch-0.5.6)
+This branch is aligned with the [branch-0.5.6](https://github.com/apache/zeppelin/tree/branch-0.5.6)
 
 ### Project Status
 
-[![Build Status](https://travis-ci.org/yorek/incubator-zeppelin.svg?branch=branch-0.5.6)](https://travis-ci.org/yorek/incubator-zeppelin)
+[![Build Status](https://travis-ci.org/yorek/zeppelin.svg?branch=branch-0.5.6)](https://travis-ci.org/yorek/zeppelin)
 
 ## Requirements
  * Java 1.8
@@ -45,7 +45,7 @@ curl -L "https://download.microsoft.com/download/0/2/A/02AAE597-3865-456C-AE7F-6
 Download code from GitHub. From a terminal shell:
 
 ```
-git clone --branch=branch-0.5.6 https://github.com/yorek/incubator-zeppelin.git zeppelin-sqlserver
+git clone --branch=branch-0.5.6 https://github.com/yorek/zeppelin.git zeppelin-sqlserver
 ```
 
 This will clone the GitHub repository into a folder named ```zeppelin-sqlserver``` in your home directory
@@ -70,7 +70,7 @@ cp ./conf/zeppelin-env.sh.template ./conf/zeppelin-env.sh
 Please note that the above commands already contains anything needed in order to make Zeppelin work with SQL Server.
 If you want to have more information on the SQL Server interpreter, you can take a look at the readme in the ```sqlserver``` folder:
 
-[SQL Server Interpreter for Apache Zeppelin](https://github.com/yorek/incubator-zeppelin/blob/master/sqlserver/README.md)
+[SQL Server Interpreter for Apache Zeppelin](https://github.com/yorek/zeppelin/blob/master/sqlserver/README.md)
 
 ### Configure
 

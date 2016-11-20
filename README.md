@@ -4,11 +4,11 @@ This fork of Apache Zeppelin is focused on specific support for SQL Server and S
 
 [Apache Zeppelin](https://github.com/apache/zeppelin)
 
-This branch is aligned with the [branch-0.5.6](https://github.com/apache/zeppelin/tree/branch-0.5.6)
+This branch is aligned with the [v0.5.6](https://github.com/apache/zeppelin/tree/v0.5.6)
 
 ### Project Status
 
-[![Build Status](https://travis-ci.org/yorek/zeppelin.svg?branch=branch-0.5.6)](https://travis-ci.org/yorek/zeppelin)
+[![Build Status](https://travis-ci.org/yorek/zeppelin.svg?branch=v0.5.6)](https://travis-ci.org/yorek/zeppelin)
 
 ## Requirements
  * Java 1.8
@@ -37,7 +37,7 @@ sudo apt-get install libfontconfig
 sudo apt-get install maven
 
 # get Microsoft JDBC
-curl -L "https://download.microsoft.com/download/0/2/A/02AAE597-3865-456C-AE7F-613F99F850A8/sqljdbc_6.0.6629.101_enu.tar.gz" | tar xz
+curl -L "https://download.microsoft.com/download/0/2/A/02AAE597-3865-456C-AE7F-613F99F850A8/enu/sqljdbc_6.0.7728.100_enu.tar.gz" | tar xz
 ```
 
 ### Get Source Code
@@ -45,7 +45,7 @@ curl -L "https://download.microsoft.com/download/0/2/A/02AAE597-3865-456C-AE7F-6
 Download code from GitHub. From a terminal shell:
 
 ```
-git clone --branch=branch-0.5.6 https://github.com/yorek/zeppelin.git zeppelin-sqlserver
+git clone --branch=v0.5.6 https://github.com/yorek/zeppelin.git zeppelin-sqlserver
 ```
 
 This will clone the GitHub repository into a folder named ```zeppelin-sqlserver``` in your home directory
